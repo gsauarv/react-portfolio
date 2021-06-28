@@ -1,7 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Kiwi+Maru&family=Poppins&display=swap");
-/* font-family: 'Kiwi Maru', serif;
-font-family: 'Poppins', sans-serif; */
-
 @font-face {
   font-family: Sans_reg;
   src: url("/src/Fonts/GeneralSans-Regular.ttf");
@@ -26,17 +22,15 @@ font-family: 'Poppins', sans-serif; */
   padding: 0px;
   box-sizing: border-box;
   font-family: Sans_reg;
-
-  /* font-family: "Poppins", sans-serif; */
 }
 
-ul li {
+ul > li {
   list-style-type: none;
   display: inline-block;
   padding: 15px;
 }
 
-ul li a {
+ul > li > a {
   text-decoration: none;
   color: black;
   font-size: 15px;
@@ -47,9 +41,6 @@ ul > li > a:hover {
   text-decoration: 2px solid #1e243d underline;
   text-underline-offset: 4px;
   transition: unset 4s ease-in-out;
-}
-.activeClass {
-  color: #1e243d;
 }
 
 .navContainer {
@@ -290,16 +281,6 @@ ul > li > a:hover {
   font-family: Sans_med;
 }
 
-/* h4:after {
-  content: "";
-  background-color: #142c94;
-  height: 5px;
-  width: 30px;
-  border: none;
-  border-radius: 100px;
-  display: block;
-} */
-
 .aboutContainer {
   width: 100%;
   height: 35vh;
@@ -444,7 +425,6 @@ ul > li > a:hover {
 }
 
 .cards:hover {
-  /* background-image: linear-gradient(#233aa0, #2140c9); */
   transition: 0.2s ease-in-out;
   box-shadow: 5px 15px 20px 8px grey;
 }
@@ -632,11 +612,10 @@ ul > li > a:hover {
 }
 
 .blockContent blockquote {
-  border-left: 2px solid #1e243d;
+  border-left: 4px solid #2d3863;
   color: #1e243d;
-  padding-left: 5px;
+  padding-left: 10px;
   font-family: Sans_reg;
-  font-style: italic;
   font-size: 19px;
   margin-top: 25px;
   text-align: justify;
@@ -648,7 +627,6 @@ ul > li > a:hover {
   margin-bottom: 40px;
   color: #1e243d;
 }
-
 .cardContainers {
   width: 100%;
   height: 700px;
@@ -780,4 +758,66 @@ ul > li > a:hover {
   color: white;
   cursor: pointer;
   transition: 0.18s ease-in-out;
+}
+
+/* Project CSS starts here */
+
+.projectContainer {
+  width: 100%;
+  height: 8em;
+  margin-top: 2em;
+  cursor: pointer;
+}
+
+.projectContainer:hover h6 {
+  text-decoration: 2px solid underline;
+  text-underline-position: 2px;
+  text-underline-offset: 4px;
+  transition: 0.2s ease-in-out;
+}
+.projectCards > h6 {
+  font-family: Sans_med;
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
+  color: #1e243d;
+  letter-spacing: 1px;
+}
+
+.projectCards > p {
+  width: 70em;
+  font-family: Sans_med;
+  font-size: 1em;
+  color: #61698b;
+  letter-spacing: 0.5px;
+  line-height: 1.5em;
+  font-weight: lighter;
+}
+
+.projectCards > span {
+  margin-top: 10px;
+  display: flex;
+}
+
+.link {
+  text-decoration: none;
+  color: none;
+}
+
+.container > h4 {
+  font-family: Sans_med;
+  padding: 0;
+  font-size: 25px;
+  margin: 0;
+  color: #1e243d;
+}
+
+.container > p {
+  font-family: Sans_med;
+  padding: 0;
+  font-size: 16px;
+  margin: 0;
+  color: #61698b;
+  text-decoration: 5px solid #2d3863 underline;
+  text-underline-offset: 10px;
+  margin-bottom: 80px;
 }

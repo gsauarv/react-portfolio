@@ -1,6 +1,7 @@
 import React from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import emailjs from "emailjs-com";
 
 const initialValues = {
   name: "",
@@ -16,9 +17,29 @@ const validationSchema = Yup.object({
   subject: Yup.string().required("Please define the purpose of your message !"),
   message: Yup.string().required("Please enter some messages !"),
 });
-const onSubmit = (values, { resetForm }) => {
+const onSubmit = (values, { res }) => {
   console.log("Field Values", values);
-  resetForm();
+  values = initialValues;
+};
+
+const sendEmail = (e) => {
+  e.preventDefault();
+  emailjs
+    .sendForm(
+      "service_r0mxe57",
+      "template_1qha8oa",
+      e.target,
+      "user_7GTJIDZz9XCJupVrhXP1F"
+    )
+    .then(
+      (result) => {
+        console.log(result.text);
+        onSubmit();
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
 };
 function Contact() {
   return (
@@ -30,11 +51,10 @@ function Contact() {
         </div>
         <div className="contactFormContainer">
           <Formik
-            onSubmit={onSubmit}
             validationSchema={validationSchema}
             initialValues={initialValues}
           >
-            <Form>
+            <Form onSubmit={sendEmail}>
               <div className="form-control">
                 <p>Full Name</p>
                 <Field type="text" id="name" name="name" />

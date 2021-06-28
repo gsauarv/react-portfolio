@@ -4,7 +4,6 @@ import HashLoader from "react-spinners/HashLoader";
 import { Link, useParams } from "react-router-dom";
 import BlockContent from "@sanity/block-content-to-react";
 import ArrowBackRoundedIcon from "@material-ui/icons/ArrowBackRounded";
-import { IconButton } from "@material-ui/core";
 function Article() {
   const [datas, setData] = useState({});
   const [loading, setLoading] = useState(true);

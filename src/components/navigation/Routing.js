@@ -9,7 +9,9 @@ import Login from "../login/Login";
 import Article from "../blog/Article";
 import Project from "../project/Projects";
 import Signup from "../login/Signup";
-import Contact from "../contact/Contact";
+import Contacts from "../contact/Contacts";
+import Screencast from "../screencasts/Screencasts";
+import ProjectDesc from "../project/ProjectDesc";
 const Routing = () => {
   return (
     <Router>
@@ -18,7 +20,8 @@ const Routing = () => {
         <Route path="/" exact component={Home}></Route>
         <Route path="/login" exact component={Login}></Route>
         <Route path="/blogs" exact component={Blogs}></Route>
-        <Route path="/contact" exact component={Contact}></Route>
+        <Route path="/contact" exact component={Contacts}></Route>
+        <Route path="/screencasts" exact component={Screencast}></Route>
 
         <Route
           path="/admin"
@@ -29,6 +32,11 @@ const Routing = () => {
         ></Route>
         <Route path="/projects" exact component={Project}></Route>
         <Route path="/signup" exact component={Signup}></Route>
+        <Route
+          path="/projectDesc/:projectId"
+          exact
+          component={ProjectDesc}
+        ></Route>
 
         <Route path="/article/:blogId" exact component={Article}></Route>
 

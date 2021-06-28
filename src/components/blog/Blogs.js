@@ -26,9 +26,6 @@ const Blogs = () => {
                 _id,
                 url 
             }
-          
-          
-                   
           }}`
         )
         .then((data) => {
@@ -40,8 +37,9 @@ const Blogs = () => {
   );
   return (
     <div className="container">
+      <h4>Blogs</h4>
+      <p>Explore and read my latest blogs</p>
       <div className="blogWrapper">
-        <p>Latest Blogs</p>
         {loading ? (
           <div className="loader">
             <HashLoader color={"#259c5f"} loading={loading} size={30} />
